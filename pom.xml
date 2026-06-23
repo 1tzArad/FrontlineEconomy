@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>xyz.itzarad</groupId>
+    <groupId>1tzArad</groupId>
     <artifactId>FrontlineEconomy</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
@@ -70,7 +70,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/AnbeCraft-Organization/FrontlineEconomy</url>
+            <url>https://maven.pkg.github.com/1tzArad/FrontlineEconomy</url>
         </repository>
     </distributionManagement>
 
