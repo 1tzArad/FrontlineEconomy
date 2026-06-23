@@ -16,6 +16,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Remove UTF-8 BOM from Java files
+        run: |
+          find . -name "*.java" -exec sed -i '1s/^\xEF\xBB\xBF//' {} +
+
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
