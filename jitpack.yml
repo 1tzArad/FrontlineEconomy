@@ -1,5 +1,0 @@
-jdk:
-  - openjdk21
-
-install:
-  - mvn -B clean package -DskipTests
