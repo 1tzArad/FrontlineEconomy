@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core.managers;
+package xyz.ItzArad.frontlineEconomy.core.managers;
 
 public class ShopManager {
 }

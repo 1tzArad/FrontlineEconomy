@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core.utils;
+package xyz.ItzArad.frontlineEconomy.core.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

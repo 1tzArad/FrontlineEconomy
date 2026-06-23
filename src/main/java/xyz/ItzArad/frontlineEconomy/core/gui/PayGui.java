@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core.gui;
+package xyz.ItzArad.frontlineEconomy.core.gui;
 
 import dev.triumphteam.gui.builder.item.ItemBuilder;
 import dev.triumphteam.gui.guis.Gui;

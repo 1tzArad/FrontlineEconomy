@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core;
+package xyz.ItzArad.frontlineEconomy.core;
 import org.bukkit.Material;
 
 public enum SellableItem {

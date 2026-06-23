@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core.utils;
+package xyz.ItzArad.frontlineEconomy.core.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

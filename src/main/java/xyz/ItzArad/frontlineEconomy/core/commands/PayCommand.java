@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core.commands;
+package xyz.ItzArad.frontlineEconomy.core.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core;
+package xyz.ItzArad.frontlineEconomy.core;
 
 import xyz.ItzArad.frontlineEconomy.api.EconomyAPI;
 import xyz.ItzArad.frontlineEconomy.core.managers.EcoManager;

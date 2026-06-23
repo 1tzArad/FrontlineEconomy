@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core.managers;
+package xyz.ItzArad.frontlineEconomy.core.managers;
 
 import lombok.Getter;
 import org.bukkit.Bukkit;

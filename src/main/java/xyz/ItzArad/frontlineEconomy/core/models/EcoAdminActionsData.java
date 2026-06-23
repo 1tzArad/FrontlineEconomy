@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core.models;
+package xyz.ItzArad.frontlineEconomy.core.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

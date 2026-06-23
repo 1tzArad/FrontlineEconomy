@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.api;
+package xyz.ItzArad.frontlineEconomy.api;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-﻿package xyz.ItzArad.frontlineEconomy.core.interfaces;
+package xyz.ItzArad.frontlineEconomy.core.interfaces;
 
 import org.bukkit.command.CommandSender;
 
