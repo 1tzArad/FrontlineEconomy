@@ -34,6 +34,12 @@ jobs:
         id: version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> "$GITHUB_OUTPUT"
 
+      - name: Find built JAR
+        id: jar
+        run: |
+          JAR_FILE=$(find target -name "*.jar" | grep -v "original" | head -n 1)
+          echo "JAR=$JAR_FILE" >> "$GITHUB_OUTPUT"
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -41,4 +47,4 @@ jobs:
           tag_name: ${{ github.ref_name }}
           generate_release_notes: true
           files: |
-            target/FrontlineEconomy.jar
+            ${{ steps.jar.outputs.JAR }}
