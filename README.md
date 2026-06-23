@@ -69,6 +69,37 @@ FrontlineEconomy.Admin.Transactions
 
 ## API Usage
 
+### Adding as a Dependency
+
+**Maven:**
+
+```xml
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+
+<dependency>
+    <groupId>com.github.1tzArad</groupId>
+    <artifactId>FrontlineEconomy</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+**Gradle:**
+
+```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.1tzArad:FrontlineEconomy:1.0.0'
+}
+```
+
+### Using the API
+
 Register the economy service from another plugin:
 
 ```java
@@ -108,7 +139,7 @@ Sellable items and prices can be modified in `SellableItem.java`.
 ## Building from Source
 
 ```bash
-git clone https://github.com/your-username/FrontlineEconomy.git
+git clone https://github.com/1tzArad/FrontlineEconomy.git
 cd FrontlineEconomy
 mvn clean package
 ```
