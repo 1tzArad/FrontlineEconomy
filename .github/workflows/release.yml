@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  packages: write
 
 jobs:
   build:
@@ -25,28 +26,35 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: 'maven'
-          server-id: github
-          server-username: GITHUB_ACTOR
-          server-password: GITHUB_TOKEN
+          cache: maven
 
-      - name: Build with Maven
-        run: mvn clean package -q
+      - name: Configure Maven settings for GitHub Packages
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml << EOF
+          <settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${{ github.actor }}</username>
+                <password>${{ secrets.GITHUB_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>
+          EOF
 
       - name: Extract version from tag
         id: version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> "$GITHUB_OUTPUT"
 
+      - name: Build & Deploy
+        run: mvn -B clean deploy -DskipTests
+
       - name: Find built JAR
         id: jar
         run: |
-          JAR_FILE=$(find target -name "*.jar" | grep -v "original" | head -n 1)
+          JAR_FILE=$(find target -name "*shaded*.jar" -o -name "*.jar" | grep -v original | head -n 1)
           echo "JAR=$JAR_FILE" >> "$GITHUB_OUTPUT"
-
-      - name: Publish to GitHub Packages
-        run: mvn deploy -DskipTests -q
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
