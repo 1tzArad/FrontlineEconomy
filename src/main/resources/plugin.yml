@@ -1,0 +1,22 @@
+name: FrontlineEconomy
+version: '1.0'
+main: xyz.ItzArad.frontlineEconomy.core.FrontlineEconomy
+api-version: '1.21'
+commands:
+  balance:
+    permission: FrontlineEconomy.Player.Balance
+    description: "get your balance"
+    aliases:
+      - bal
+  pay:
+    description: pay command
+    permission: FrontlineEconomy.Player.Pay
+  ecoadmin:
+    description: economy admin commands
+    permission: FrontlineEconomy.Admin
+  sell:
+    permission: FrontlineEconomy.Player.Sell
+  balancetop:
+    permission: FrontlineEconomy.Player.BalanceTop
+    aliases:
+      - baltop

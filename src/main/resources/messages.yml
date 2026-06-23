@@ -1,0 +1,54 @@
+en:
+  err:
+    no_money: "<red>You Don't Have Enough Money!"
+    no_money_2: "<red>This player doesn't have this amount of money!"
+    must_be_number: "<red>&{x} must be a number"
+    player_404_or_away: "<red>Player not found or too far away!"
+    player_404: "<red>This player doesn't exists!"
+    only_player: "<red>Only players can use this command!"
+    permission: "<yellow>You don't have enough permission to do this!"
+  pay:
+    receive: "<green>You received <white> &{amount} <green>from <white>&{from} <green>Reason: <white>&{reason}"
+    send: "<green>You paid <white>&{amount} <green>to <white>&{to} <green>Reason: <white>&{reason}"
+  gui:
+    pay:
+      title: "<gradient:#55ff55:#246b24>Pay To &{to}</gradient>"
+      items:
+        player:
+          name: "&{to}"
+          lore:
+            - "Player Name: &{name}"
+            - "Status? Online/Offline"
+        amount:
+          name: "<yellow>Amount: &{amount}"
+        reason:
+          name: "<yellow>Pay Reason"
+          lore:
+            - "&{reason}"
+        cancel:
+          name: "<red>Cancel"
+        accept:
+          name: "<green>Accept"
+  admin_commands:
+    list:
+      title: "<gold>Admin Commands <yellow>:"
+      cmd: "<gold>&{cmd.name}<yellow>: <gold>&{cmd.description} <yellow>- <gold>Usage<yellow>: <gold>&{cmd.usage}"
+    balance:
+      add: "Successfully added &{amount} to &{to}'s balance - Reason: &{reason}"
+      reset: "Successfully reset ${player}'s balance - Reason: &{reason}"
+      set: "Successfully set &{player}'s balance to &{amount} - Reason &{reason}"
+      take: "Successfully taken &{amount} from &{player}'s balance - Reason &{reason}"
+    transactions:
+      line: "<dark_gray>------------------------------"
+      title: "&{player}'s transactions:"
+      data:
+        id: "<gold>ID: &{uuid}"
+        from: "<gold>From: &{from}"
+        to: "<gold>To: &{to}"
+        amount: "<gold>Amount: &{amount}"
+        reason: "<gold>Reason: &{reason}"
+        time: "<gold>Time: &{time}"
+  commands:
+    balance:
+      v1: "<gold>Your Balance:</gold> <yellow>&{balance}"
+      v2: "<gold>&{player}'s Balance:</gold> <yellow>&{balance}"
