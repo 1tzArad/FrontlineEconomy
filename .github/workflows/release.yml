@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  packages: write
 
 jobs:
   build:
@@ -23,14 +22,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
-          server-id: github
-          server-username: GITHUB_ACTOR
-          server-password: GITHUB_TOKEN
 
-      - name: Build & Deploy
-        run: mvn -B clean deploy -DskipTests
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build
+        run: mvn -B clean package -DskipTests
 
       - name: Extract version from tag
         id: version
@@ -39,7 +33,7 @@ jobs:
       - name: Find built JAR
         id: jar
         run: |
-          JAR_FILE=$(find target -name "*.jar" | grep -v "original" | head -n 1)
+          JAR_FILE=$(find target -name "*.jar" | grep -v "original" | grep -v shaded | head -n 1)
           echo "JAR=$JAR_FILE" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release

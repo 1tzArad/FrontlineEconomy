@@ -39,6 +39,11 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.5.3</version>
 
+                <configuration>
+                    <shadedArtifactAttached>true</shadedArtifactAttached>
+                    <shadedClassifierName>shaded</shadedClassifierName>
+                </configuration>
+
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -47,13 +52,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-
-            <!-- IMPORTANT: ensure deploy works cleanly -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.1.4</version>
             </plugin>
 
         </plugins>
@@ -65,14 +63,6 @@
             </resource>
         </resources>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/1tzArad/FrontlineEconomy</url>
-        </repository>
-    </distributionManagement>
 
     <repositories>
         <repository>
