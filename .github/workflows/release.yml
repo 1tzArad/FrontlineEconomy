@@ -26,6 +26,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
+          server-id: github
+          server-username: GITHUB_ACTOR
+          server-password: GITHUB_TOKEN
 
       - name: Build with Maven
         run: mvn clean package -q
@@ -39,6 +42,11 @@ jobs:
         run: |
           JAR_FILE=$(find target -name "*.jar" | grep -v "original" | head -n 1)
           echo "JAR=$JAR_FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Publish to GitHub Packages
+        run: mvn deploy -DskipTests -q
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
